@@ -24,7 +24,7 @@ api = tweepy.API(auth)
 while True:
 	tweet = scrape_some_data()
 	api.update_status(tweet)
-	time.sleep(300)
+	time.sleep(3000)
 
 
 
