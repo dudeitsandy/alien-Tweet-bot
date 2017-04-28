@@ -3,6 +3,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import lxml
+import random
 
 
 
@@ -10,7 +11,8 @@ def scrape_some_data():
 	r = requests.get('http://randomtextgenerator.com/').text
 	soup=BeautifulSoup(r,'lxml')
 	p = soup.find_all('textarea')[0].get_text()
-	op = p[:90]
+	rng = random.randrange(10,150)
+	op = p[:rng]
 	return op
 	
 CONSUMER_KEY = 'jIseBb65iypSqxyjD4Hsy8x8E'
