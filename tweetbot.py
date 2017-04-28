@@ -5,7 +5,7 @@ from urllib import request
 
 
 def scrape_some_data():
-	r= urllib.request.urlopen('http://randomtextgenerator.com/').read()
+	r= request.urlopen('http://randomtextgenerator.com/').read()
 	soup=BeautifulSoup(r,'lxml')
 	p = soup.find_all('textarea')[0].get_text()
 	op = p[:90]
