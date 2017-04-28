@@ -1,11 +1,12 @@
 import tweepy
 import time
+import urllib.request
 from bs4 import BeautifulSoup
-import requests
+
 
 
 def scrape_some_data():
-	r= requests.urlopen('http://randomtextgenerator.com/').read()
+	r= urllib.request.urlopen('http://randomtextgenerator.com/').read()
 	soup=BeautifulSoup(r,'lxml')
 	p = soup.find_all('textarea')[0].get_text()
 	op = p[:90]
