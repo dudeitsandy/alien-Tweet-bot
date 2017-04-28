@@ -1,7 +1,7 @@
 import tweepy
 import time
 from bs4 import BeautifulSoup
-import urllib.request
+from urllib import request
 
 
 def scrape_some_data():
