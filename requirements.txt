@@ -1,3 +1,2 @@
 tweepy==3.5.0
-bs4==4.5.3
 urllib.request==3.6
