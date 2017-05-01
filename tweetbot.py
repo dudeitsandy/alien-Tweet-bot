@@ -11,7 +11,7 @@ def scrape_some_data():
 	r = requests.get('http://randomtextgenerator.com/').text
 	soup=BeautifulSoup(r,'lxml')
 	p = soup.find_all('textarea')[0].get_text()
-	rng = random.randrange(10,150)
+	rng = random.randrange(10,140)
 	op = p[:rng]
 	return op
 	
