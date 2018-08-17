@@ -8,12 +8,14 @@ import random
 
 
 def scrape_some_data():
-	r = requests.get('http://randomtextgenerator.com/').text
+	r = requests.get('https://www.plot-generator.org.uk/story-ideas/').text
 	soup=BeautifulSoup(r,'lxml')
-	p = soup.find_all('textarea')[0].get_text()
-	rng = random.randrange(10,140)
-	op = p[:rng]
-	return op
+	p = soup.find(class_='random_story').get_text()
+	# deprecated code
+	# rng = random.randrange(10,140)
+	# op = p[:rng]
+	# return op
+	return p
 	
 CONSUMER_KEY = 'jIseBb65iypSqxyjD4Hsy8x8E'
 CONSUMER_SECRET = 'VPp4wCLSfCJhOzNcmYT4XiS0DTiUmuCJ9ilK9taOoilxAr3JA4'
@@ -26,7 +28,7 @@ api = tweepy.API(auth)
 while True:
 	tweet = scrape_some_data()
 	api.update_status(tweet)
-	time.sleep(3000)
+	time.sleep(28800)
 
 
 
